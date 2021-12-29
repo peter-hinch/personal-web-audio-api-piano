@@ -1,5 +1,8 @@
 const context = new AudioContext();
 const oscillator = context.createOscillator();
+
+// Define the frequencies to be used for each key.
+// reference: https://pages.mtu.edu/~suits/notefreqs.html
 const notes = {
   c2: 65.41,
   d2: 73.42,
@@ -31,6 +34,7 @@ const notes = {
   b5: 987.77,
   c6: 1046.50,
 }
+
 let freq = 150
 
 oscillator.frequency = freq;
