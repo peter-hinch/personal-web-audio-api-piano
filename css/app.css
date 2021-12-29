@@ -1,0 +1,62 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+#keyboard {
+  position: relative;
+  width: 100vw;
+}
+
+#keyboard .keys-row {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  width: 100%;
+}
+
+#keyboard .keys-wht {
+  grid-template-columns: repeat(29, 1fr);
+  grid-template-rows: auto;
+  align-items: stretch;
+  justify-content: stretch;
+  column-gap: 0.1rem;
+  min-height: 24rem;
+}
+
+#keyboard .keys-blk {
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: auto;
+  column-gap: 0.1rem;
+  min-height: 14rem;
+}
+
+#keyboard .key {
+  text-align: center;
+  border-radius: 4px;
+  border: 1px solid gray;
+}
+
+#keyboard #c4 {
+  background-color: red;
+}
+
+#keyboard .keys-wht .key {
+  background-color: white;
+  color: black;
+}
+
+#keyboard .keys-blk .key {
+  background-color: black;
+  color: white;
+}
+
+#test-slider {
+  position: absolute;
+  top: 60px;
+  left: 6s0px;
+  width: 48px;
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+}
