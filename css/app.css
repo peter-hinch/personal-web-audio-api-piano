@@ -37,10 +37,6 @@ html, body {
   border: 1px solid gray;
 }
 
-#keyboard #c4 {
-  background-color: red;
-}
-
 #keyboard .keys-wht .key {
   background-color: white;
   color: black;
