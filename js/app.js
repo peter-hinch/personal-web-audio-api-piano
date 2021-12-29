@@ -1,8 +1,5 @@
-const context = new AudioContext();
-const oscillator = context.createOscillator();
-
 // Define the frequencies to be used for each key.
-// reference: https://pages.mtu.edu/~suits/notefreqs.html
+// Reference: https://pages.mtu.edu/~suits/notefreqs.html
 const notes = {
   c2: 65.41,
   cs2: 69.3,
@@ -55,22 +52,30 @@ const notes = {
   c6: 1046.50,
 }
 
-let freq = 150
+// Function to play a note using Web Audio API
+// Reference: https://ui.dev/web-audio-api/
+const playNote = freq => {
+  const context = new AudioContext();
+  const oscillator = context.createOscillator();
+  
+  oscillator.type = "square";
 
-oscillator.frequency = freq;
+  var gain = context.createGain();
+  
+  oscillator.connect(gain);
+  gain.connect(context.destination);
+  
+  var now = context.currentTime;
+  
+  oscillator.frequency.setValueAtTime(freq, now);
+  
+  gain.gain.setValueAtTime(1, now);
+  gain.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
+  oscillator.start(now);
+  oscillator.stop(now + 0.5);
 
-var gain = context.createGain();
+};
 
-oscillator.connect(gain);
-gain.connect(context.destination);
-
-var now = context.currentTime;
-
-gain.gain.setValueAtTime(1, now);
-gain.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
-oscillator.start(now);
-oscillator.stop(now + 0.5);
-
-document.addEventListener("click", function(evnt){
-  console.log(evnt.target.id);
+document.addEventListener('click', e => {
+  playNote(notes[e.target.id]);
 });
