@@ -14,6 +14,7 @@ html, body {
   left: 0;
   display: grid;
   width: 100%;
+  column-gap: 0.1rem;
 }
 
 #keyboard .keys-wht {
@@ -21,14 +22,12 @@ html, body {
   grid-template-rows: auto;
   align-items: stretch;
   justify-content: stretch;
-  column-gap: 0.1rem;
   min-height: 24rem;
 }
 
 #keyboard .keys-blk {
   grid-template-columns: repeat(20, 1fr);
   grid-template-rows: auto;
-  column-gap: 0.1rem;
   min-height: 14rem;
 }
 
