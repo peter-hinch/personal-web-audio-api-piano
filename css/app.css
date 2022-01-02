@@ -84,8 +84,8 @@ html, body {
   position: relative;
   box-sizing: border-box;
   overflow: hidden;
-  border-radius: 0 0 calc(var(--kb-unit) * 3) calc(var(--kb-unit) * 3);
   border: 1px solid var(--kb-shade-40);
+  border-radius: 0 0 calc(var(--kb-unit) * 3) calc(var(--kb-unit) * 3);
 }
 
 #keyboard .key span {
@@ -99,13 +99,24 @@ html, body {
 }
 
 #keyboard .keys-wht .key {
-  background: linear-gradient(var(--kb-shade-05), var(--kb-shade-10));
+  background: linear-gradient(
+    var(--kb-shade-15) 0%,
+    var(--kb-shade-05) 15%,
+    var(--kb-shade-wht) 35%,
+    var(--kb-shade-10) 100%
+  );
   color: var(--kb-shade-85);
 }
 
 #keyboard .keys-blk .key {
   width: calc(var(--kb-unit) * 14);
   margin-right: calc(var(--kb-unit) * 14);
-  background: linear-gradient(var(--kb-shade-85), var(--kb-shade-95));
+  background: linear-gradient( 176deg,
+    var(--kb-shade-85) 0%,
+    var(--kb-shade-80) 20%,
+    var(--kb-shade-70) 30%,
+    var(--kb-shade-80) 40%,
+    var(--kb-shade-95) 100%
+  );
   color: var(--kb-shade-10);
 }
