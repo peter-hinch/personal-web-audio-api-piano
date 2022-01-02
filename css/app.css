@@ -55,6 +55,7 @@ html, body {
 }
 
 #keyboard .key {
+  box-sizing: border-box;
   text-align: center;
   overflow: hidden;
   border-radius: 4px;
