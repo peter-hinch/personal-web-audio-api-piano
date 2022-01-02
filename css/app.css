@@ -4,6 +4,26 @@
 html, body {
   --kb-width: 87vw;
   --kb-unit: calc(var(--kb-width) / 29 / 24 );
+  --kb-shade-05: hsl(71, 6%, 95%);
+  --kb-shade-10: hsl(71, 6%, 90%);
+  --kb-shade-15: hsl(71, 6%, 85%);
+  --kb-shade-20: hsl(71, 6%, 80%);
+  --kb-shade-25: hsl(71, 6%, 75%);
+  --kb-shade-30: hsl(71, 6%, 70%);
+  --kb-shade-35: hsl(71, 6%, 65%);
+  --kb-shade-40: hsl(71, 6%, 60%);
+  --kb-shade-45: hsl(71, 6%, 55%);
+  --kb-shade-50: hsl(71, 6%, 50%);
+  --kb-shade-55: hsl(71, 6%, 45%);
+  --kb-shade-60: hsl(71, 6%, 40%);
+  --kb-shade-65: hsl(71, 6%, 35%);
+  --kb-shade-70: hsl(71, 6%, 30%);
+  --kb-shade-75: hsl(71, 6%, 25%);
+  --kb-shade-80: hsl(71, 6%, 20%);
+  --kb-shade-85: hsl(71, 6%, 15%);
+  --kb-shade-90: hsl(71, 6%, 10%);
+  --kb-shade-95: hsl(71, 6%, 05%);
+
 }
 
 html, body {
@@ -59,7 +79,7 @@ html, body {
   position: relative;
   box-sizing: border-box;
   overflow: hidden;
-  border-radius: 0 0 4px 4px;
+  border-radius: 0 0 6px 6px;
   border: 1px solid gray;
 }
 
