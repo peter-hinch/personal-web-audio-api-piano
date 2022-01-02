@@ -15,40 +15,41 @@ html, body {
 #keyboard {
   position: relative;
   width: var(--kb-width);
-  height: 15vw;
   margin: 0 auto;
 }
 
 #keyboard .keys-row {
   position: absolute;
-  left: 0;
   top: 0;
-  width: 100%;
   display: grid;
   grid-template-rows: auto;
 }
 
-#keyboard .keys-wht {
+#keyboard .keys-row.keys-wht {
+  left: 0;
+  width: var(--kb-width);
+  height: calc(var(--kb-unit) * 135);
   grid-template-columns: repeat(29, 1fr);
-  height: 100%;
 }
 
-#keyboard .keys-blk {
+#keyboard .keys-row.keys-blk {
+  left: calc(var(--kb-unit) * 14);
+  width: calc(var(--kb-width) - (var(--kb-unit) * 56));
+  height: calc(var(--kb-unit) * 67.5);
   grid-template-columns: repeat(8, 1fr);
-  height: 50%;
+  column-gap: calc(var(--kb-unit) * 28);
 }
 
-#keyboard .keys-grp {
+#keyboard .grp-blk {
   display: grid;
-
 }
 
-#keyboard .keys-grp.grp-2 {
+#keyboard .grp-blk.grp-2 {
   grid-template-columns: repeat(2, 1fr);
   width: calc(var(--kb-unit) * 42);
 }
 
-#keyboard .keys-grp.grp-3 {
+#keyboard .grp-blk.grp-3 {
   grid-template-columns: repeat(3, 1fr);
   width: calc(var(--kb-unit) * 70);
 }
@@ -67,6 +68,7 @@ html, body {
 
 #keyboard .keys-blk .key {
   width: calc(var(--kb-unit) * 14);
+  margin-right: calc(var(--kb-unit) * 13);
   background-color: black;
   color: white;
 }
