@@ -9,6 +9,7 @@ html, body {
 html, body {
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
 }
 
 #keyboard {
@@ -29,12 +30,13 @@ html, body {
   width: var(--kb-width);
   height: calc(var(--kb-unit) * 135);
   grid-template-columns: repeat(29, 1fr);
+  column-gap: 1px;
 }
 
 #keyboard .keys-row.keys-blk {
   left: calc(var(--kb-unit) * 15);
   width: calc(var(--kb-width) - (var(--kb-unit) * 52));
-  height: calc(var(--kb-unit) * 67.5);
+  height: calc(var(--kb-unit) * 75);
   grid-template-columns: repeat(8, 1fr);
   column-gap: calc(var(--kb-unit) * 28);
 }
@@ -57,14 +59,15 @@ html, body {
   position: relative;
   box-sizing: border-box;
   overflow: hidden;
-  border-radius: 4px;
-  border: 2px solid gray;
+  border-radius: 0 0 4px 4px;
+  border: 1px solid gray;
 }
 
 #keyboard .key span {
   position: absolute;
   bottom: calc(var(--kb-unit) * 7);
   width: 100%;
+  font-size: calc(var(--kb-unit) * 7);
   text-align: center;
   user-select: none;
   pointer-events: none;
