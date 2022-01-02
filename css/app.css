@@ -10,24 +10,22 @@ html, body {
 
 #keyboard .keys-row {
   position: absolute;
-  top: 0;
   left: 0;
-  display: grid;
+  top: 0;
   width: 100%;
-  column-gap: 0.1rem;
+  display: grid;
+  grid-template-rows: auto;
 }
 
 #keyboard .keys-wht {
   grid-template-columns: repeat(29, 1fr);
-  grid-template-rows: auto;
-  align-items: stretch;
-  justify-content: stretch;
+  column-gap: 0.1%;
   min-height: 24rem;
 }
 
 #keyboard .keys-blk {
   grid-template-columns: repeat(20, 1fr);
-  grid-template-rows: auto;
+  column-gap: 2%;
   min-height: 14rem;
 }
 
@@ -45,13 +43,4 @@ html, body {
 #keyboard .keys-blk .key {
   background-color: black;
   color: white;
-}
-
-#test-slider {
-  position: absolute;
-  top: 60px;
-  left: 6s0px;
-  width: 48px;
-  transform: rotate(90deg);
-  -webkit-transform: rotate(90deg);
 }
