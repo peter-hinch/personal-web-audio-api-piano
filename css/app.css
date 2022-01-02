@@ -1,3 +1,12 @@
+/* Define units for keyboard measurements, multiples of --kb-unit can be used */
+/* for the sizing of elements on the board (e.g. white key is 24 units wide). */
+/* Reference: http://quadibloc.com/other/cnv05.htm */
+
+html, body {
+  --kb-width: 87vw;
+  --kb-unit: calc(var(--kb-width) / 29 / 24 );
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -5,7 +14,9 @@ html, body {
 
 #keyboard {
   position: relative;
-  width: 100vw;
+  width: var(--kb-width);
+  height: 15vw;
+  margin: 0 auto;
 }
 
 #keyboard .keys-row {
@@ -19,18 +30,32 @@ html, body {
 
 #keyboard .keys-wht {
   grid-template-columns: repeat(29, 1fr);
-  column-gap: 0.1%;
-  min-height: 24rem;
+  height: 100%;
 }
 
 #keyboard .keys-blk {
-  grid-template-columns: repeat(20, 1fr);
-  column-gap: 2%;
-  min-height: 14rem;
+  grid-template-columns: repeat(8, 1fr);
+  height: 50%;
+}
+
+#keyboard .keys-grp {
+  display: grid;
+
+}
+
+#keyboard .keys-grp.grp-2 {
+  grid-template-columns: repeat(2, 1fr);
+  width: calc(var(--kb-unit) * 42);
+}
+
+#keyboard .keys-grp.grp-3 {
+  grid-template-columns: repeat(3, 1fr);
+  width: calc(var(--kb-unit) * 70);
 }
 
 #keyboard .key {
   text-align: center;
+  overflow: hidden;
   border-radius: 4px;
   border: 1px solid gray;
 }
@@ -41,6 +66,7 @@ html, body {
 }
 
 #keyboard .keys-blk .key {
+  width: calc(var(--kb-unit) * 14);
   background-color: black;
   color: white;
 }
