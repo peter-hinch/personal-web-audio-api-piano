@@ -90,7 +90,7 @@ html, body {
 
 #keyboard .key span {
   position: absolute;
-  bottom: calc(var(--kb-unit) * 7);
+  bottom: calc(var(--kb-unit) * 9);
   width: 100%;
   font-size: calc(var(--kb-unit) * 7);
   text-align: center;
