@@ -1,3 +1,9 @@
+// Define the oscillator types available
+// Reference: https://webaudio.github.io/web-audio-api/#OscillatorNode
+const oscillatorTypes = ['sine', 'square', 'sawtooth', 'triangle'];
+
+let currentOscillatorType = oscillatorTypes[1];
+
 // Define the frequencies to be used for each key.
 // Reference: https://pages.mtu.edu/~suits/notefreqs.html
 const notes = {
@@ -32,8 +38,8 @@ const notes = {
   e4: 329.63,
   f4: 349.23,
   fs4: 369.99,
-  g4: 392.00,
-  gs4: 415.30,
+  g4: 392.0,
+  gs4: 415.3,
   a4: 440,
   as4: 466.16,
   b4: 493.88,
@@ -49,33 +55,39 @@ const notes = {
   a5: 880,
   as5: 932.33,
   b5: 987.77,
-  c6: 1046.50,
-}
+  c6: 1046.5
+};
 
 // Function to play a note using Web Audio API
 // Reference: https://ui.dev/web-audio-api/
-const playNote = freq => {
+const playNote = (freq, oscillatorType) => {
   const context = new AudioContext();
   const oscillator = context.createOscillator();
-  
-  oscillator.type = "square";
+
+  oscillator.type = oscillatorType;
 
   var gain = context.createGain();
-  
+
   oscillator.connect(gain);
   gain.connect(context.destination);
-  
+
   var now = context.currentTime;
-  
+
   oscillator.frequency.setValueAtTime(freq, now);
-  
+
   gain.gain.setValueAtTime(1, now);
   gain.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
   oscillator.start(now);
   oscillator.stop(now + 0.5);
-
 };
 
-document.addEventListener('click', e => {
-  playNote(notes[e.target.id]);
+const oscillatorTypeControl = document.getElementById('oscillator-type');
+oscillatorTypeControl.addEventListener('change', (e) => {
+  let newOscIndex = parseInt(e.target.value);
+  currentOscillatorType = oscillatorTypes[newOscIndex];
+  console.log(oscillatorTypes[newOscIndex]);
+});
+
+document.addEventListener('click', (e) => {
+  playNote(notes[e.target.id], currentOscillatorType);
 });
